@@ -53,6 +53,7 @@ class PostDeploymentResponse(BaseModel):
     revision: int
     image: str
     status: str
+    push_token: str | None = None
 
 
 class GetProjectResponse(BaseModel):
