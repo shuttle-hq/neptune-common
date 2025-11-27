@@ -1,0 +1,55 @@
+[project]
+name = "neptune-common"
+version = "0.1.0"
+description = "Base models for Neptune API"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic>=2.12.5",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.6",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.13,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+respect-gitignore = true
+src = ["src/neptune_common"]
+
+[tool.ruff.format]
+line-ending = "lf"
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+lines-between-types = 0
+combine-as-imports = true
+force-single-line = false
+force-wrap-aliases = true
+split-on-trailing-comma = true
+force-sort-within-sections = true
+relative-imports-order = "closest-to-furthest"
+default-section = "third-party"
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder"
+]
+known-first-party = [
+    "neptune_common",
+]
