@@ -1,4 +1,4 @@
-from neptune_api.models import (
+from neptune_common.models import (
     ProjectResourceStatus,
     ProjectRunningStatus,
     ProviderConfig,

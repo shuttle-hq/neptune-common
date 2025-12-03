@@ -1,5 +1,5 @@
 [project]
-name = "neptune-api"
+name = "neptune-common"
 version = "0.1.0"
 description = "Base models for Neptune API"
 readme = "README.md"
