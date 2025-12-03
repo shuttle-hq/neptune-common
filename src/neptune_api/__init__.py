@@ -10,12 +10,10 @@ from neptune_api.models import (
     GetProjectResponse,
     ListProjectsResponse,
     PutProjectRequest,
-    DatabaseResource,
     StorageBucketResource,
     SecretResource,
     GetLogsResponse,
     ListBucketKeysResponse,
-    GetDatabaseConnectionInfoResponse,
 )
 
 __all__ = [
@@ -30,10 +28,8 @@ __all__ = [
     "GetProjectResponse",
     "ListProjectsResponse",
     "PutProjectRequest",
-    "DatabaseResource",
     "StorageBucketResource",
     "SecretResource",
     "GetLogsResponse",
     "ListBucketKeysResponse",
-    "GetDatabaseConnectionInfoResponse",
 ]

@@ -5,7 +5,7 @@ from typing import Any, Literal
 
 
 class ProjectResourceStatus(BaseModel):
-    kind: Literal["Database", "StorageBucket", "Secret"]
+    kind: Literal["StorageBucket", "Secret"]
     name: str
     status: Literal["Pending", "Available", "Error"] = "Pending"
     aws_id: str | None = None
@@ -75,18 +75,13 @@ class ListProjectsResponse(BaseModel):
 class PutProjectRequest(BaseModel):
     kind: Literal["Service"]
     name: str
-    resources: list[DatabaseResource | StorageBucketResource | SecretResource] = []
+    resources: list[StorageBucketResource | SecretResource] = []
     cloud_provider: ProviderConfig = ProviderConfig()
     port_mappings: list[PortMapping] = [
         PortMapping(container_port=8080, host_port=8080)
     ]
     cpu: str = "256"
     memory: str = "512"
-
-
-class DatabaseResource(BaseModel):
-    kind: Literal["Database"]
-    name: str
 
 
 class StorageBucketResource(BaseModel):
@@ -106,12 +101,3 @@ class GetLogsResponse(BaseModel):
 
 class ListBucketKeysResponse(BaseModel):
     keys: list[str]
-
-
-class GetDatabaseConnectionInfoResponse(BaseModel):
-    host: str
-    port: int
-    database: str
-    username: str
-    password: str
-    ssl_mode: str = "require"
