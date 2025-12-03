@@ -1,20 +1,21 @@
 from neptune_common.models import (
+    GetHealthResponse,
+    GetLogsResponse,
+    GetProjectResponse,
+    ListBucketKeysResponse,
+    ListProjectsResponse,
+    PortMapping,
+    PostDeploymentResponse,
     ProjectResourceStatus,
     ProjectRunningStatus,
     ProviderConfig,
-    PortMapping,
-    GetHealthResponse,
+    PutProjectRequest,
     PutProjectResponse,
     PutSecretValueRequest,
-    PostDeploymentResponse,
-    GetProjectResponse,
-    ListProjectsResponse,
-    PutProjectRequest,
-    StorageBucketResource,
     SecretResource,
-    GetLogsResponse,
-    ListBucketKeysResponse,
+    StorageBucketResource,
 )
+
 
 __all__ = [
     "ProjectResourceStatus",

@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from pydantic import BaseModel
 from typing import Any, Literal
+
+from pydantic import BaseModel
 
 
 class ProjectResourceStatus(BaseModel):
@@ -78,7 +79,7 @@ class PutProjectRequest(BaseModel):
     resources: list[StorageBucketResource | SecretResource] = []
     cloud_provider: ProviderConfig = ProviderConfig()
     port_mappings: list[PortMapping] = [
-        PortMapping(container_port=8080, host_port=8080)
+        PortMapping(container_port=8080, host_port=8080),
     ]
     cpu: str = "256"
     memory: str = "512"
