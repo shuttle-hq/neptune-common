@@ -95,9 +95,11 @@ class SecretResource(BaseModel):
     name: str
     value_string: str | None = None
 
+
 class DatabaseResource(BaseModel):
     kind: Literal["Database"]
     name: str
+
 
 class GetLogsResponse(BaseModel):
     logs: list[str]
