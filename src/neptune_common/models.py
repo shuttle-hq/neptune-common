@@ -6,7 +6,7 @@ from pydantic import BaseModel
 
 
 class ProjectResourceStatus(BaseModel):
-    kind: Literal["StorageBucket", "Secret"]
+    kind: Literal["StorageBucket", "Secret", "Database"]
     name: str
     status: Literal["Pending", "Available", "Error"] = "Pending"
     aws_id: str | None = None
@@ -76,7 +76,7 @@ class ListProjectsResponse(BaseModel):
 class PutProjectRequest(BaseModel):
     kind: Literal["Service"]
     name: str
-    resources: list[StorageBucketResource | SecretResource] = []
+    resources: list[StorageBucketResource | SecretResource | DatabaseResource] = []
     cloud_provider: ProviderConfig = ProviderConfig()
     port_mappings: list[PortMapping] = [
         PortMapping(container_port=8080, host_port=8080),
@@ -95,6 +95,9 @@ class SecretResource(BaseModel):
     name: str
     value_string: str | None = None
 
+class DatabaseResource(BaseModel):
+    kind: Literal["Database"]
+    name: str
 
 class GetLogsResponse(BaseModel):
     logs: list[str]
