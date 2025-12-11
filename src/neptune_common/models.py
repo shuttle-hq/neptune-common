@@ -91,12 +91,14 @@ class PostDeploymentResponse(BaseModel):
     image: str
     status: str
     push_token: str | None = None
+    error: str | None = None
 
 
 class GetProjectResponse(BaseModel):
     name: str
     kind: Literal["Service"] = "Service"
     provisioning_state: str
+    url: str | None = None
     running_status: ProjectRunningStatus
     resources: list[ProjectResourceStatus]
     port_mappings: list[PortMapping]
