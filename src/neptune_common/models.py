@@ -60,6 +60,7 @@ class ProjectRunningStatus(BaseModel):
     deployment_revision: int | None = None
     last_updated: str | None = None
     public_ip: str | None = None
+    url: str | None = None
 
     port_mappings: list[PortMapping] | None = None
     cpu: str | None = None
