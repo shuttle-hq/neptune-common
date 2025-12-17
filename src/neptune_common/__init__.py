@@ -15,6 +15,8 @@ from neptune_common.models import (
     PutProjectRequest,
     PutProjectResponse,
     PutSecretValueRequest,
+    QueryDatabaseRequest,
+    QueryDatabaseResponse,
     SecretResource,
     StorageBucketResource,
 )
@@ -39,4 +41,6 @@ __all__ = [
     "PutSecretValueRequest",
     "SecretResource",
     "StorageBucketResource",
+    "QueryDatabaseRequest",
+    "QueryDatabaseResponse",
 ]

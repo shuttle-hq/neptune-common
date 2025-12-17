@@ -146,3 +146,16 @@ class GetLogsResponse(BaseModel):
 
 class ListBucketKeysResponse(BaseModel):
     keys: list[str]
+
+
+class QueryDatabaseRequest(BaseModel):
+    """Request model for database query endpoint."""
+
+    table: str
+    where_condition: str | None = None
+
+
+class QueryDatabaseResponse(BaseModel):
+    """Response model for database query endpoint."""
+
+    rows: list[dict]
